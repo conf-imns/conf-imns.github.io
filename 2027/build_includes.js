@@ -56,6 +56,11 @@ pages.forEach(page => {
     console.warn(`Could not find navigation placeholder or existing static nav in ${page}`);
   }
 
+  const footerLabelRegex = /<strong class="footer-sponsor-label">[\s\S]*?<\/strong>/g;
+  if (footerLabelRegex.test(content)) {
+    content = content.replace(footerLabelRegex, '<strong class="footer-sponsor-label">- Co-Sponsors -</strong>');
+  }
+
   if (footerSponsorRegex.test(content)) {
     content = content.replace(footerSponsorRegex, targetFooterSponsors);
   }
