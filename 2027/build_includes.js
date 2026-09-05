@@ -1,12 +1,61 @@
 const fs = require('fs');
 const path = require('path');
 
-const dir2027 = 'F:/#WebsiteManagement/conf-imns.github.io/2027';
-const navHtml = fs.readFileSync(path.join(dir2027, 'navigation.html'), 'utf8').trim();
+const dir2027 = __dirname;
+const navTemplate = fs.readFileSync(path.join(dir2027, 'navigation.html'), 'utf8').trim();
 const annHtml = fs.readFileSync(path.join(dir2027, 'announcement.html'), 'utf8').trim();
 
+const pages = [
+  'index.html',
+  'Organizing-Committee.html',
+  'Call-for-Paper.html',
+  'Submissions.html',
+  'Posters-and-Demo.html',
+  'Program.html',
+  'Registration.html',
+  'Keynote.html',
+  'Venue.html',
+  'Sponsorship.html',
+  'Previous-Years.html'
+];
+
+function getStaticNav(page) {
+  // Indent nav lines with 2 spaces to match HTML body indentation
+  let formatted = navTemplate.split('\n').map(line => line ? '  ' + line : '').join('\n');
+
+  // Add aria-current="page" only to the nav item link corresponding to this page (both desktop sidebar and mobile menu)
+  const targetHref = `<li><a href="./${page}"`;
+  formatted = formatted.split(targetHref).join(`<li><a href="./${page}" aria-current="page"`);
+
+  return formatted;
+}
+
+// 1. Update static navigation copy in all 2027 HTML files
+pages.forEach(page => {
+  const filePath = path.join(dir2027, page);
+  if (!fs.existsSync(filePath)) return;
+
+  let content = fs.readFileSync(filePath, 'utf8');
+  const staticNav = getStaticNav(page);
+
+  const placeholderRegex = /[ \t]*<!-- Navigation included from navigation\.html -->\s*<div id="site-navigation-placeholder" data-include="\.\/navigation\.html"><\/div>/;
+  const staticNavRegex = /[ \t]*<aside class="sidebar" aria-label="Conference navigation">[\s\S]*?<\/header>/;
+
+  if (placeholderRegex.test(content)) {
+    content = content.replace(placeholderRegex, staticNav);
+    fs.writeFileSync(filePath, content, 'utf8');
+    console.log(`Updated ${page}: inserted static navigation`);
+  } else if (staticNavRegex.test(content)) {
+    content = content.replace(staticNavRegex, staticNav);
+    fs.writeFileSync(filePath, content, 'utf8');
+    console.log(`Updated ${page}: refreshed static navigation`);
+  } else {
+    console.warn(`Could not find navigation placeholder or existing static nav in ${page}`);
+  }
+});
+
+// 2. Build 2027/js/include.js without any JS navigation
 const jsCode = `(function() {
-  const FALLBACK_NAV = ${JSON.stringify(navHtml)};
   const FALLBACK_ANNOUNCEMENT = ${JSON.stringify(annHtml)};
 
   function ensureExternalLinksTargetBlank(root) {
@@ -34,23 +83,6 @@ const jsCode = `(function() {
     });
   }
 
-  function highlightActiveNav() {
-    let currentPage = window.location.pathname.split('/').pop().split('?')[0].split('#')[0];
-    if (!currentPage || currentPage === '' || currentPage === '/') {
-      currentPage = 'index.html';
-    }
-    const links = document.querySelectorAll('.site-nav a');
-    links.forEach(function(link) {
-      link.removeAttribute('aria-current');
-      const href = link.getAttribute('href');
-      if (!href) return;
-      const targetPage = href.split('/').pop().split('?')[0].split('#')[0];
-      if (targetPage.toLowerCase() === currentPage.toLowerCase()) {
-        link.setAttribute('aria-current', 'page');
-      }
-    });
-  }
-
   async function loadIncludes() {
     const includeElements = Array.from(document.querySelectorAll('[data-include]'));
     for (const el of includeElements) {
@@ -70,9 +102,7 @@ const jsCode = `(function() {
       }
 
       if (!html) {
-        if (url.includes('navigation')) {
-          html = FALLBACK_NAV;
-        } else if (url.includes('announcement')) {
+        if (url.includes('announcement')) {
           html = FALLBACK_ANNOUNCEMENT;
         }
       }
@@ -82,7 +112,6 @@ const jsCode = `(function() {
       }
     }
 
-    highlightActiveNav();
     ensureExternalLinksTargetBlank();
   }
 
@@ -97,4 +126,4 @@ const jsCode = `(function() {
 `;
 
 fs.writeFileSync(path.join(dir2027, 'js', 'include.js'), jsCode, 'utf8');
-console.log('Successfully wrote 2027/js/include.js');
+console.log('Successfully wrote 2027/js/include.js (no JS navigation)');
