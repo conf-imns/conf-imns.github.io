@@ -1,0 +1,1302 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Program for the 2026 International Conference on Intelligent Multimedia, Networking, and Security.">
+  <title>IMNS 2026 Conference Program</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --navy-950: #092638;
+      --navy-900: #10384d;
+      --navy-800: #174d64;
+      --teal-700: #147b82;
+      --teal-600: #1b9095;
+      --gold-600: #b98124;
+      --gold-500: #d4a44a;
+
+      --ink: #20323d;
+      --muted: #63737c;
+      --line: #d5dfe3;
+      --line-strong: #b7c6cc;
+      --surface: #ffffff;
+      --canvas: #eef2f4;
+      --soft: #f7f9fa;
+
+      --monday-bg: #eef7fa;
+      --monday-head: #dceff4;
+      --monday-card: #f9fcfd;
+      --monday-accent: #247b8e;
+      --monday-line: #b7d9e1;
+
+      --tuesday-bg: #fff9ed;
+      --tuesday-head: #f6e9c8;
+      --tuesday-card: #fffdf8;
+      --tuesday-accent: #a7751e;
+      --tuesday-line: #dfc88e;
+
+      --page-width: 1160px;
+      --sans: "Manrope", Arial, Helvetica, sans-serif;
+      --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+    }
+
+    html {
+      min-width: 320px;
+      margin: 0;
+      padding: 0;
+      color-scheme: light;
+      scroll-behavior: smooth;
+      background: var(--canvas);
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    body {
+      min-width: 320px;
+      margin: 0 !important;
+      padding: 0 !important;
+      color: var(--ink) !important;
+      background: var(--canvas) !important;
+      font-family: var(--sans) !important;
+      font-size: 16px !important;
+      font-weight: 400;
+      line-height: 1.65;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      border-radius: 0 !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    dl,
+    dt,
+    dd {
+      margin-top: 0;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    ::selection {
+      color: #ffffff;
+      background: var(--teal-700);
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      padding: 11px 16px;
+      color: #ffffff;
+      background: var(--navy-950);
+      font-weight: 800;
+      text-decoration: none;
+      transform: translateY(-110%);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    /* =========================================================
+       COMPACT SITE HEADER
+       ========================================================= */
+
+    .top-note {
+      color: #d8e6eb;
+      background: var(--navy-950);
+      border-top: 4px solid var(--gold-500);
+    }
+
+    .top-note__inner {
+      display: flex;
+      width: min(var(--page-width), calc(100% - 36px));
+      min-height: 30px;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 0.69rem;
+      font-weight: 700;
+      letter-spacing: 0.055em;
+      text-transform: uppercase;
+    }
+
+    .site-header {
+      color: var(--navy-950);
+      background: #ffffff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .site-header__inner {
+      display: flex;
+      width: min(var(--page-width), calc(100% - 36px));
+      min-height: 64px;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: flex;
+      min-width: 0;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand__mark {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      flex: 0 0 auto;
+      place-items: center;
+      color: #ffffff;
+      background: var(--navy-900);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.07em;
+    }
+
+    .brand__name {
+      display: block;
+      color: var(--navy-950);
+      font-size: 0.93rem;
+      font-weight: 800;
+      line-height: 1.18;
+    }
+
+    .brand__meta {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .site-nav a {
+      display: block;
+      padding: 21px 11px 19px;
+      color: #49616e;
+      border-bottom: 3px solid transparent;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .site-nav a:hover,
+    .site-nav a:focus-visible,
+    .site-nav a[aria-current="page"] {
+      color: var(--navy-950);
+      border-bottom-color: var(--teal-700);
+    }
+
+    /* =========================================================
+       SMALL EDITORIAL HERO
+       ========================================================= */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: #ffffff;
+      background:
+        linear-gradient(112deg, var(--navy-950) 0%, var(--navy-800) 67%, var(--teal-700) 100%);
+    }
+
+    .hero::after {
+      position: absolute;
+      top: -115px;
+      right: -70px;
+      width: 330px;
+      height: 330px;
+      content: "";
+      border: 58px solid rgba(255, 255, 255, 0.065);
+      transform: rotate(17deg);
+    }
+
+    .hero__inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      width: min(var(--page-width), calc(100% - 36px));
+      min-height: 190px;
+      margin: 0 auto;
+      padding: 34px 0 38px;
+      grid-template-columns: minmax(0, 1fr) 330px;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .hero__eyebrow {
+      margin: 0 0 9px;
+      color: #aee1e0;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 790px;
+      margin: 0;
+      color: #ffffff;
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4.2vw, 3.45rem);
+      font-weight: 650;
+      line-height: 1.04;
+      letter-spacing: -0.035em;
+      text-wrap: balance;
+    }
+
+    .hero__subtitle {
+      max-width: 730px;
+      margin: 12px 0 0;
+      color: #d6e8ed;
+      font-size: 0.91rem;
+      line-height: 1.55;
+    }
+
+    .hero-meta {
+      display: grid;
+      border-left: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .hero-meta__row {
+      display: grid;
+      padding: 8px 0 8px 22px;
+      grid-template-columns: 68px 1fr;
+      gap: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .hero-meta__row:first-child {
+      border-top: 0;
+    }
+
+    .hero-meta dt {
+      margin: 0;
+      color: #9fd3da;
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .hero-meta dd {
+      margin: 0;
+      color: #ffffff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    /* =========================================================
+       PAGE FRAME AND PROGRAM NAV
+       ========================================================= */
+
+    .imns-page {
+      width: min(var(--page-width), calc(100% - 36px)) !important;
+      margin: 26px auto 52px !important;
+      padding: 0 !important;
+      overflow: hidden;
+      color: var(--ink) !important;
+      background: var(--surface) !important;
+      border: 1px solid var(--line) !important;
+      box-shadow: 0 14px 36px rgba(9, 38, 56, 0.085);
+      font-family: var(--sans) !important;
+    }
+
+    .local-nav {
+      display: flex;
+      min-height: 55px;
+      padding: 0 24px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid var(--line);
+      background: var(--soft);
+    }
+
+    .local-nav__label {
+      color: var(--navy-900);
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .day-nav {
+      display: flex;
+      gap: 7px;
+    }
+
+    .day-nav a {
+      display: block;
+      padding: 8px 12px;
+      color: var(--navy-900);
+      border: 1px solid var(--line-strong);
+      background: #ffffff;
+      font-size: 0.73rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .day-nav a:first-child {
+      border-left: 4px solid var(--monday-accent);
+    }
+
+    .day-nav a:last-child {
+      border-left: 4px solid var(--tuesday-accent);
+    }
+
+    .day-nav a:hover,
+    .day-nav a:focus-visible {
+      color: #ffffff;
+      border-color: var(--navy-900);
+      background: var(--navy-900);
+    }
+
+    /* =========================================================
+       WELCOME FUNCTION OUTPUT
+       Flex layout makes the organizer row reliable.
+       ========================================================= */
+
+    .welcome-output {
+      display: flex;
+      padding: 44px clamp(22px, 5vw, 62px) 46px;
+      flex-wrap: wrap;
+      background: #ffffff;
+    }
+
+    .welcome-output > h1,
+    .welcome-output > p,
+    .welcome-output > hr {
+      flex: 0 0 100%;
+      width: 100%;
+    }
+
+    .welcome-output > h1 {
+      max-width: 900px;
+      margin: 0 auto 23px !important;
+      padding: 0 0 15px !important;
+      color: var(--navy-950) !important;
+      border: 0 !important;
+      border-bottom: 3px solid var(--gold-500) !important;
+      background: transparent !important;
+      font-family: var(--serif) !important;
+      font-size: clamp(1.75rem, 3.3vw, 2.55rem) !important;
+      font-weight: 650 !important;
+      line-height: 1.16 !important;
+      letter-spacing: -0.03em;
+      text-align: left !important;
+      text-wrap: balance;
+    }
+
+    .welcome-output > p {
+      max-width: 900px;
+      margin: 0 auto 16px !important;
+      padding: 0 !important;
+      color: var(--ink) !important;
+      background: transparent !important;
+      font-family: var(--sans) !important;
+      font-size: 0.94rem !important;
+      line-height: 1.78 !important;
+      text-align: left !important;
+    }
+
+    .welcome-output > h1 + p {
+      color: var(--teal-700) !important;
+      font-size: 1rem !important;
+      font-weight: 800 !important;
+    }
+
+    .welcome-output > p strong {
+      color: var(--navy-950) !important;
+      font-weight: 800 !important;
+    }
+
+    .welcome-output > hr {
+      display: block;
+      max-width: 900px;
+      height: 4px !important;
+      margin: 30px auto 24px !important;
+      padding: 0 !important;
+      border: 0 !important;
+      background:
+        linear-gradient(90deg, var(--navy-900) 0 78%, var(--gold-500) 78% 100%)
+        !important;
+    }
+
+    /* The four organizer paragraphs produced after <hr>. */
+    .welcome-output > hr ~ p {
+      flex: 0 0 25%;
+      width: 25% !important;
+      max-width: none !important;
+      min-height: 158px;
+      margin: 0 !important;
+      padding: 23px 18px !important;
+      color: var(--muted) !important;
+      border-top: 4px solid var(--teal-700) !important;
+      border-right: 1px solid var(--line) !important;
+      background: #f6f9fa !important;
+      font-size: 0.82rem !important;
+      line-height: 1.55 !important;
+      text-align: center !important;
+    }
+
+    .welcome-output > hr ~ p:last-of-type {
+      border-right: 0 !important;
+    }
+
+    .welcome-output > hr ~ p strong {
+      display: block !important;
+      margin: 0 0 6px !important;
+      color: var(--navy-950) !important;
+      font-family: var(--serif) !important;
+      font-size: 1.03rem !important;
+      font-weight: 700 !important;
+      line-height: 1.28 !important;
+      text-align: center !important;
+    }
+
+    /* =========================================================
+       PROGRAM SECTION INTRO
+       ========================================================= */
+
+    .program-intro {
+      display: flex;
+      padding: 26px clamp(22px, 5vw, 48px);
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      color: #ffffff;
+      border-top: 1px solid var(--navy-950);
+      border-bottom: 1px solid var(--navy-950);
+      background: var(--navy-900);
+    }
+
+    .program-intro h2 {
+      margin: 0;
+      color: #ffffff;
+      font-family: var(--serif);
+      font-size: clamp(1.45rem, 2.7vw, 2rem);
+      font-weight: 650;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+    }
+
+    .program-intro p {
+      max-width: 670px;
+      margin: 6px 0 0;
+      color: #cadee5;
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+
+    .program-legend {
+      display: flex;
+      flex: 0 0 auto;
+      gap: 15px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: #e8f1f4;
+      font-size: 0.7rem;
+      font-weight: 800;
+    }
+
+    .legend-swatch {
+      width: 20px;
+      height: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.44);
+    }
+
+    .legend-swatch--monday {
+      background: var(--monday-head);
+    }
+
+    .legend-swatch--tuesday {
+      background: var(--tuesday-head);
+    }
+
+    /* =========================================================
+       PROGRAM OUTPUT
+       Monday is the default palette. All siblings after #Tue use
+       the Tuesday palette.
+       ========================================================= */
+
+    .program-output {
+      padding: 0 0 30px;
+      background: #ffffff;
+      font-size: 0;
+    }
+
+    .program-output > * {
+      font-size: 16px;
+    }
+
+    .program-output .sessionday {
+      position: sticky;
+      z-index: 20;
+      top: 0;
+      clear: both;
+      margin: 0 !important;
+      padding: 18px clamp(20px, 4.5vw, 48px) !important;
+      color: var(--navy-950) !important;
+      border: 0 !important;
+      border-left: 9px solid var(--monday-accent) !important;
+      border-bottom: 1px solid var(--monday-line) !important;
+      background: var(--monday-head) !important;
+      box-shadow: 0 5px 15px rgba(9, 38, 56, 0.07);
+      font-family: var(--serif) !important;
+      font-size: clamp(1.3rem, 2.7vw, 1.85rem) !important;
+      font-weight: 700 !important;
+      line-height: 1.12 !important;
+      letter-spacing: -0.025em;
+      text-align: left !important;
+      scroll-margin-top: 8px;
+    }
+
+    .program-output .sessionday::after {
+      float: right;
+      color: var(--monday-accent);
+      content: "DAY 1";
+      font-family: var(--sans);
+      font-size: 0.64rem;
+      font-weight: 900;
+      line-height: 2.1;
+      letter-spacing: 0.15em;
+    }
+
+    .program-output #Tue {
+      margin-top: 38px !important;
+      border-left-color: var(--tuesday-accent) !important;
+      border-bottom-color: var(--tuesday-line) !important;
+      background: var(--tuesday-head) !important;
+    }
+
+    .program-output #Tue::after {
+      color: var(--tuesday-accent);
+      content: "DAY 2";
+    }
+
+    .program-output .sessiontime {
+      display: grid !important;
+      grid-template-columns: 10px minmax(0, auto) 1fr;
+      align-items: center;
+      gap: 11px;
+      margin: 0 !important;
+      padding: 23px clamp(20px, 4.5vw, 48px) 9px !important;
+      color: var(--monday-accent) !important;
+      border: 0 !important;
+      background: var(--monday-bg) !important;
+      font-family: var(--sans) !important;
+      font-size: 0.74rem !important;
+      font-weight: 900 !important;
+      line-height: 1.35 !important;
+      letter-spacing: 0.045em;
+      text-align: left !important;
+      text-transform: uppercase;
+    }
+
+    .program-output .sessiontime::before {
+      width: 10px;
+      height: 10px;
+      content: "";
+      border: 2px solid var(--monday-accent);
+      background: #ffffff;
+    }
+
+    .program-output .sessiontime::after {
+      height: 1px;
+      content: "";
+      background: var(--monday-line);
+    }
+
+    .program-output .sessionindent {
+      margin-right: clamp(20px, 4.5vw, 48px) !important;
+      margin-left: clamp(20px, 4.5vw, 48px) !important;
+    }
+
+    .program-output .sessiontime.sessionindent {
+      margin-right: 0 !important;
+      margin-left: 0 !important;
+    }
+
+    .program-output .sessiontitle {
+      position: relative;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      padding: 14px 52px 14px 16px !important;
+      color: var(--navy-950) !important;
+      border: 1px solid var(--monday-line) !important;
+      border-left: 5px solid var(--monday-accent) !important;
+      background: var(--monday-head) !important;
+      box-shadow: 0 5px 14px rgba(9, 38, 56, 0.045);
+      font-family: var(--sans) !important;
+      font-size: 0.94rem !important;
+      font-weight: 800 !important;
+      line-height: 1.42 !important;
+      letter-spacing: -0.008em;
+      text-align: left !important;
+    }
+
+    .program-output .sessiontitle::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 8px;
+      height: 100%;
+      content: "";
+      background: var(--monday-accent);
+    }
+
+    .program-output .sessionheader {
+      display: block !important;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      padding: 9px 16px 11px !important;
+      color: var(--muted) !important;
+      border: 1px solid var(--monday-line) !important;
+      border-top: 0 !important;
+      background: #eaf5f7 !important;
+      font-family: var(--sans) !important;
+      font-size: 0.78rem !important;
+      line-height: 1.4 !important;
+      text-align: left !important;
+    }
+
+    .program-output .room {
+      display: inline-block !important;
+      margin: 0 !important;
+      padding: 4px 8px !important;
+      color: var(--navy-950) !important;
+      border: 1px solid var(--monday-accent) !important;
+      background: #ffffff !important;
+      font-size: 0.72rem !important;
+      font-weight: 900 !important;
+      line-height: 1.2 !important;
+    }
+
+    .program-output .session {
+      display: block !important;
+      margin: -1px 0 0 !important;
+      margin-bottom: 0 !important;
+      padding: 0 16px 7px !important;
+      border: 1px solid var(--monday-line) !important;
+      background: var(--monday-card) !important;
+      box-shadow: 0 6px 17px rgba(9, 38, 56, 0.045);
+    }
+
+    /* Tuesday palette */
+    .program-output #Tue ~ .sessiontime {
+      color: var(--tuesday-accent) !important;
+      background: var(--tuesday-bg) !important;
+    }
+
+    .program-output #Tue ~ .sessiontime::before {
+      border-color: var(--tuesday-accent);
+    }
+
+    .program-output #Tue ~ .sessiontime::after {
+      background: var(--tuesday-line);
+    }
+
+    .program-output #Tue ~ .sessiontitle {
+      border-color: var(--tuesday-line) !important;
+      border-left-color: var(--tuesday-accent) !important;
+      background: var(--tuesday-head) !important;
+    }
+
+    .program-output #Tue ~ .sessiontitle::after {
+      background: var(--tuesday-accent);
+    }
+
+    .program-output #Tue ~ .sessionheader {
+      border-color: var(--tuesday-line) !important;
+      background: #fbf2dc !important;
+    }
+
+    .program-output #Tue ~ .sessionheader .room {
+      border-color: var(--tuesday-accent) !important;
+    }
+
+    .program-output #Tue ~ .session {
+      border-color: var(--tuesday-line) !important;
+      background: var(--tuesday-card) !important;
+    }
+
+    /* =========================================================
+       PAPER LISTS
+       ========================================================= */
+
+    .program-output dl.papers {
+      margin: 0 !important;
+      padding: 0 !important;
+      counter-reset: paper;
+    }
+
+    .program-output dl.papers dt {
+      position: relative;
+      display: block !important;
+      margin: 0 !important;
+      padding: 16px 56px 5px 34px !important;
+      color: var(--ink) !important;
+      border-top: 1px solid rgba(32, 50, 61, 0.13) !important;
+      background: transparent !important;
+      font-family: var(--sans) !important;
+      font-size: 0.87rem !important;
+      font-weight: 750 !important;
+      line-height: 1.5 !important;
+      text-align: left !important;
+      counter-increment: paper;
+    }
+
+    .program-output dl.papers dt:first-child {
+      border-top: 0 !important;
+    }
+
+    .program-output dl.papers dt::before {
+      position: absolute;
+      top: 17px;
+      left: 0;
+      display: grid;
+      width: 23px;
+      height: 23px;
+      place-items: center;
+      content: counter(paper);
+      color: #ffffff;
+      background: var(--navy-800);
+      font-size: 0.63rem;
+      font-weight: 900;
+    }
+
+    .program-output .papertitle,
+    .program-output .papertitle em {
+      color: var(--ink) !important;
+      font-style: normal !important;
+      font-weight: 750 !important;
+    }
+
+    .program-output dl.papers dd {
+      display: block !important;
+      margin: 0 !important;
+      padding: 0 34px 15px !important;
+      color: var(--muted) !important;
+      background: transparent !important;
+      font-family: var(--sans) !important;
+      font-size: 0.76rem !important;
+      line-height: 1.56 !important;
+      text-align: left !important;
+    }
+
+    .program-output .authors {
+      color: var(--muted) !important;
+    }
+
+    /* PDF link uses a text label even if Font Awesome does not load. */
+    .program-output .papertitle a[title*="PDF"] {
+      position: absolute;
+      top: 12px;
+      right: 2px;
+      display: inline-flex !important;
+      width: 43px;
+      height: 31px;
+      align-items: center;
+      justify-content: center;
+      margin: 0 !important;
+      padding: 0 !important;
+      color: #ffffff !important;
+      border: 1px solid var(--navy-900) !important;
+      background: var(--navy-900) !important;
+      font-size: 0 !important;
+      line-height: 1 !important;
+      text-decoration: none !important;
+      transition:
+        color 140ms ease,
+        background 140ms ease,
+        transform 140ms ease;
+    }
+
+    .program-output .papertitle a[title*="PDF"]::before {
+      content: "PDF";
+      color: inherit;
+      font-family: var(--sans);
+      font-size: 0.61rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+    }
+
+    .program-output .papertitle a[title*="PDF"] > span {
+      display: none !important;
+    }
+
+    .program-output .papertitle a[title*="PDF"]:hover,
+    .program-output .papertitle a[title*="PDF"]:focus-visible {
+      color: var(--navy-950) !important;
+      border-color: var(--gold-500) !important;
+      background: var(--gold-500) !important;
+      transform: translate(-2px, -2px);
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--gold-500);
+      outline-offset: 3px;
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    .site-footer {
+      color: #c8d9df;
+      background: var(--navy-950);
+    }
+
+    .site-footer__inner {
+      display: flex;
+      width: min(var(--page-width), calc(100% - 36px));
+      min-height: 82px;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .site-footer p {
+      margin: 0;
+      font-size: 0.75rem;
+    }
+
+    .site-footer strong {
+      color: #ffffff;
+    }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 900px) {
+      .site-header__inner {
+        min-height: 0;
+        padding-top: 13px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .site-nav {
+        width: 100%;
+        overflow-x: auto;
+      }
+
+      .site-nav a {
+        padding: 11px 10px 10px;
+        white-space: nowrap;
+      }
+
+      .hero__inner {
+        min-height: 0;
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .hero-meta {
+        grid-template-columns: repeat(3, 1fr);
+        border-top: 1px solid rgba(255, 255, 255, 0.22);
+        border-left: 0;
+      }
+
+      .hero-meta__row {
+        padding: 12px 15px 0 0;
+        grid-template-columns: 1fr;
+        gap: 2px;
+        border-top: 0;
+      }
+
+      .welcome-output > hr ~ p {
+        flex-basis: 50%;
+        width: 50% !important;
+        border-bottom: 1px solid var(--line) !important;
+      }
+
+      .welcome-output > hr ~ p:nth-of-type(even) {
+        border-right: 0 !important;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .top-note__inner,
+      .site-header__inner,
+      .hero__inner,
+      .site-footer__inner {
+        width: min(var(--page-width), calc(100% - 26px));
+      }
+
+      .top-note__inner span:last-child {
+        display: none;
+      }
+
+      .hero__inner {
+        padding: 29px 0 31px;
+      }
+
+      .hero-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-meta__row {
+        padding: 8px 0;
+        grid-template-columns: 62px 1fr;
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+      }
+
+      .imns-page {
+        width: 100% !important;
+        margin: 0 auto !important;
+        border-right: 0 !important;
+        border-left: 0 !important;
+        box-shadow: none;
+      }
+
+      .local-nav {
+        padding: 14px 16px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .day-nav {
+        width: 100%;
+      }
+
+      .day-nav a {
+        flex: 1;
+        text-align: center;
+      }
+
+      .welcome-output {
+        padding: 35px 18px 38px;
+      }
+
+      .welcome-output > hr ~ p {
+        flex-basis: 100%;
+        width: 100% !important;
+        min-height: 0;
+        border-right: 0 !important;
+      }
+
+      .program-intro {
+        padding: 23px 18px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .program-legend {
+        flex-wrap: wrap;
+      }
+
+      .program-output .sessionday {
+        position: relative;
+        padding: 16px 16px !important;
+        border-left-width: 7px !important;
+      }
+
+      .program-output .sessionday::after {
+        display: none;
+      }
+
+      .program-output .sessiontime {
+        grid-template-columns: 9px minmax(0, auto);
+        align-items: start;
+        padding: 21px 14px 8px !important;
+        font-size: 0.68rem !important;
+      }
+
+      .program-output .sessiontime::after {
+        display: none;
+      }
+
+      .program-output .sessionindent {
+        margin-right: 13px !important;
+        margin-left: 13px !important;
+      }
+
+      .program-output .sessiontitle {
+        padding: 13px 45px 13px 13px !important;
+        font-size: 0.88rem !important;
+      }
+
+      .program-output .sessionheader {
+        padding-right: 13px !important;
+        padding-left: 13px !important;
+      }
+
+      .program-output .session {
+        padding-right: 12px !important;
+        padding-left: 12px !important;
+      }
+
+      .program-output dl.papers dt {
+        padding-right: 49px !important;
+        padding-left: 31px !important;
+      }
+
+      .program-output dl.papers dd {
+        padding-right: 9px !important;
+        padding-left: 31px !important;
+      }
+
+      .site-footer__inner {
+        min-height: 0;
+        padding: 22px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    /* =========================================================
+       PRINT
+       ========================================================= */
+
+    @media print {
+      html,
+      body {
+        color: #000000 !important;
+        background: #ffffff !important;
+      }
+
+      .skip-link,
+      .top-note,
+      .site-header,
+      .local-nav,
+      .program-legend,
+      .site-footer {
+        display: none !important;
+      }
+
+      .hero {
+        color: #000000 !important;
+        border-bottom: 3px solid #000000;
+        background: #ffffff !important;
+      }
+
+      .hero::after {
+        display: none;
+      }
+
+      .hero__inner {
+        width: 100%;
+        min-height: 0;
+        padding: 18px 0;
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1,
+      .hero__subtitle,
+      .hero__eyebrow {
+        color: #000000 !important;
+      }
+
+      .hero-meta {
+        display: none;
+      }
+
+      .imns-page {
+        width: 100% !important;
+        margin: 0 !important;
+        border: 0 !important;
+        box-shadow: none;
+      }
+
+      .program-intro {
+        padding-right: 0;
+        padding-left: 0;
+        color: #000000 !important;
+        border-top: 2px solid #000000;
+        border-bottom: 2px solid #000000;
+        background: #ffffff !important;
+      }
+
+      .program-intro h2,
+      .program-intro p {
+        color: #000000 !important;
+      }
+
+      .program-output .sessionday {
+        position: relative;
+        color: #000000 !important;
+        border: 2px solid #000000 !important;
+        background: #ffffff !important;
+        box-shadow: none;
+      }
+
+      .program-output .sessiontime,
+      .program-output .sessiontitle,
+      .program-output .sessionheader,
+      .program-output .session,
+      .program-output #Tue ~ .sessiontime,
+      .program-output #Tue ~ .sessiontitle,
+      .program-output #Tue ~ .sessionheader,
+      .program-output #Tue ~ .session {
+        color: #000000 !important;
+        background: #ffffff !important;
+        box-shadow: none;
+      }
+
+      .program-output .sessiontitle,
+      .program-output .sessionheader,
+      .program-output .session,
+      .program-output dl.papers dt,
+      .program-output dl.papers dd {
+        break-inside: avoid;
+      }
+
+      .program-output .papertitle a[title*="PDF"] {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to conference content</a>
+
+  <div class="top-note">
+    <div class="top-note__inner">
+      <span>IMNS 2026 Conference Program</span>
+      <span>Technically co-sponsored by IEEE and the IEEE Communications Society</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="#top" aria-label="IMNS 2026 program home">
+        <span class="brand__mark" aria-hidden="true">IMNS</span>
+        <span>
+          <span class="brand__name">Intelligent Multimedia, Networking, and Security</span>
+          <span class="brand__meta">International Conference · 2026</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Conference navigation">
+        <a href="#welcome">Welcome</a>
+        <a href="#program" aria-current="page">Program</a>
+        <a href="#Mon">Monday</a>
+        <a href="#Tue">Tuesday</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="top" aria-labelledby="conference-title">
+    <div class="hero__inner">
+      <div>
+        <p class="hero__eyebrow">August 3–4, 2026 · Kennesaw, Georgia</p>
+        <h1 id="conference-title">2026 International Conference on Intelligent Multimedia, Networking, and Security</h1>
+        <p class="hero__subtitle">
+          Research and practice across intelligent media, communication networks,
+          artificial intelligence, privacy, and cybersecurity.
+        </p>
+      </div>
+
+      <dl class="hero-meta" aria-label="Conference details">
+        <div class="hero-meta__row">
+          <dt>Dates</dt>
+          <dd>August 3–4, 2026</dd>
+        </div>
+        <div class="hero-meta__row">
+          <dt>Venue</dt>
+          <dd>KSU Center</dd>
+        </div>
+        <div class="hero-meta__row">
+          <dt>Location</dt>
+          <dd>Kennesaw, Georgia, USA</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <main class="imns-page" id="main-content">
+    <div class="local-nav">
+      <span class="local-nav__label">Conference schedule</span>
+      <nav class="day-nav" aria-label="Jump to a conference day">
+        <a href="#Mon">Day 1 · Monday</a>
+        <a href="#Tue">Day 2 · Tuesday</a>
+      </nav>
+    </div>
+
+    <section class="welcome-output" id="welcome" aria-label="Welcome message">
+      func_welcome()
+    </section>
+
+    <section class="program-intro" id="program" aria-labelledby="program-title">
+      <div>
+        <h2 id="program-title">Technical Program</h2>
+        <p>
+          Sessions, rooms, accepted papers, authors, keynotes, breaks,
+          and conference events across the two-day program.
+        </p>
+      </div>
+
+      <div class="program-legend" aria-label="Program day colors">
+        <span class="legend-item">
+          <span class="legend-swatch legend-swatch--monday" aria-hidden="true"></span>
+          Monday
+        </span>
+        <span class="legend-item">
+          <span class="legend-swatch legend-swatch--tuesday" aria-hidden="true"></span>
+          Tuesday
+        </span>
+      </div>
+    </section>
+
+    <section class="program-output" aria-label="Detailed conference program">
+      func_program()
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p><strong>IMNS 2026</strong><br>August 3–4, 2026 · Kennesaw, Georgia</p>
+      <p>International Conference on Intelligent Multimedia, Networking, and Security</p>
+    </div>
+  </footer>
+</body>
+</html>
