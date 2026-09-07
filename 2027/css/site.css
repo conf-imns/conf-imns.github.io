@@ -32,6 +32,8 @@
 
 html {
   min-height: 100%;
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -115,15 +117,19 @@ object {
   display: block;
   color: #ffffff;
   font-family: var(--font-heading);
+  font-size: 15.5px;
   line-height: 1.35;
   text-decoration: none;
-  transition: color 0.15s ease;
+  border-bottom: 2px solid var(--comsoc-light);
+  padding-bottom: 12px;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 .sidebar-brand:hover,
 .sidebar-brand:focus {
   color: #ffffff;
   text-decoration: none;
+  border-bottom-color: #60a5fa;
 }
 
 .sidebar-brand:hover span,
@@ -133,33 +139,33 @@ object {
 
 .sidebar-brand:hover strong,
 .sidebar-brand:focus strong {
-  color: #ffffff;
-  border-bottom-color: #60a5fa;
+  color: #93c5fd;
 }
 
 .sidebar-brand span {
-  display: block;
-  font-size: 15.5px;
-  letter-spacing: 0.3px;
-  line-height: 1.3;
-  transition: color 0.15s ease;
+  display: inline;
+  font-size: inherit;
+  letter-spacing: 0.25px;
+  line-height: inherit;
 }
 
 .sidebar-brand strong {
-  display: block;
-  margin-top: 8px;
-  font-size: 21px;
-  font-family: var(--font-heading);
+  display: inline;
+  margin-top: 0;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: 700;
   color: #ffffff;
-  border-bottom: 2px solid var(--comsoc-light);
-  padding-bottom: 8px;
-  letter-spacing: 0.5px;
-  transition: border-color 0.15s ease;
+  border-bottom: none;
+  padding-bottom: 0;
+  letter-spacing: 0.25px;
+  white-space: nowrap;
+  transition: color 0.15s ease;
 }
 
 .sponsor-group {
-  margin: 24px 0 28px;
-  padding: 16px 12px;
+  margin: 16px 0 12px;
+  padding: 12px 10px 10px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
@@ -167,13 +173,13 @@ object {
 .sponsor-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 10px;
   align-items: center;
 }
 
 .logo-tile {
   display: flex;
-  min-height: 54px;
+  min-height: 52px;
   align-items: center;
   justify-content: center;
   background: transparent;
@@ -183,24 +189,24 @@ object {
 .logo-tile img {
   display: block;
   width: auto;
-  max-height: 46px;
+  max-height: 44px;
   mix-blend-mode: screen;
 }
 
 .logo-tile.wide {
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .logo-tile.wide img {
-  max-height: 200px;
+  max-height: 180px;
   mix-blend-mode: normal;
 }
 
 .sponsor-caption {
-  margin: 10px 0 0;
+  margin: 8px 0 0;
   color: #cbd5e1;
   font-family: var(--font-academic);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
@@ -209,10 +215,14 @@ object {
 
 .site-nav ul {
   display: grid;
-  gap: 6px;
+  gap: 0;
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.site-nav li:not(:first-child) a {
+  margin-top: -1px;
 }
 
 .site-nav a {
@@ -234,6 +244,8 @@ object {
 .site-nav a:hover,
 .site-nav a:focus,
 .site-nav a[aria-current="page"] {
+  position: relative;
+  z-index: 1;
   color: var(--navy);
   background: #ffffff;
   border-color: #ffffff;
@@ -243,6 +255,8 @@ object {
 .site-nav a:focus-visible {
   outline: 2px solid var(--comsoc-light);
   outline-offset: 2px;
+  position: relative;
+  z-index: 2;
 }
 
 .mobile-header {
@@ -985,7 +999,7 @@ tbody tr:hover {
   }
 
   .mobile-menu nav ul {
-    gap: 6px;
+    gap: 0;
   }
 
   .page-shell {

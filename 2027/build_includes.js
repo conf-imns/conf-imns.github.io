@@ -65,6 +65,11 @@ pages.forEach(page => {
     content = content.replace(footerSponsorRegex, targetFooterSponsors);
   }
 
+  const cssVersionRegex = /href="\.\/css\/site\.css\?v=[^"]*"/g;
+  if (cssVersionRegex.test(content)) {
+    content = content.replace(cssVersionRegex, 'href="./css/site.css?v=20270907"');
+  }
+
   fs.writeFileSync(filePath, content, 'utf8');
   console.log(`Updated ${page}: refreshed static navigation and sponsors`);
 });
