@@ -35,7 +35,7 @@ const footerSponsorRegex = /<div class="footer-sponsors">[\s\S]*?<\/div>/;
 const targetFooterSponsors = `<div class="footer-sponsors">
             <a class="logo-tile" href="https://www.ieee.org/index.html" target="_blank" rel="noopener"><img src="../gallery_gen/0ef15cb374fb53a0cfff7775b7b7c185_268x88_fit.png" alt="IEEE"></a>
             <a class="logo-tile" href="http://www.comsoc.org/" target="_blank" rel="noopener"><img src="../gallery_gen/291072cf3804a51717d0122e03c31a82_264x96_fit.png" alt="IEEE Communications Society"></a>
-            <a class="logo-tile" href="https://www.stevens.edu/" target="_blank" rel="noopener"><img src="../gallery/stevens_horizontal.png" alt="Stevens Institute of Technology"></a>
+            <a class="logo-tile" href="https://www.stevens.edu/" target="_blank" rel="noopener"><img src="../gallery/stevens.svg" alt="Stevens Institute of Technology"></a>
           </div>`;
 
 pages.forEach(page => {
