@@ -198,7 +198,7 @@ object {
 }
 
 .logo-tile.wide img {
-  max-height: 180px;
+  max-height: 160px;
   mix-blend-mode: normal;
 }
 
