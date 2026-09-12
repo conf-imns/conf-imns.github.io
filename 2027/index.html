@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -8,28 +8,112 @@
   <meta http-equiv="Expires" content="0">
   <meta name="description" content="Join IMNS 2027, the International Conference on Intelligent Multimedia, Networking, and Security, in the New York Area, August 5-6, 2027.">
   <title>IMNS 2027: International Conference on Intelligent Multimedia, Networking &amp; Security in New York Area</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..800;1,8..60,400..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/site.css?v=20270907">
   <script src="./js/include.js?v=20270905" defer></script>
+
   <link rel="icon" type="image/x-icon" href="../favicon.ico">
   <link rel="icon" type="image/png" sizes="64x64" href="../gallery/favicon-pixel-64x64.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../gallery/apple-touch-icon.png">
+
+  <style>
+    .hero-reel {
+      position: relative;
+      border-bottom: 3px solid var(--comsoc-blue);
+      background: #000;
+    }
+
+    .hero-reel .hero-image {
+      border-bottom: 0;
+    }
+
+    .hero-reel-controls {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      pointer-events: none;
+    }
+
+    .hero-reel-dots,
+    .hero-reel-toggle {
+      pointer-events: auto;
+    }
+
+    .hero-reel-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .hero-reel-dot,
+    .hero-reel-toggle {
+      border: 1px solid rgba(255, 255, 255, 0.9) !important;
+      background: rgba(0, 40, 85, 0.72);
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .hero-reel-dot {
+      width: 12px;
+      height: 12px;
+      padding: 0;
+      border-radius: 50% !important;
+    }
+
+    .hero-reel-dot[aria-current="true"] {
+      background: #fff;
+    }
+
+    .hero-reel-toggle {
+      min-width: 34px;
+      height: 28px;
+      padding: 2px 8px;
+      border-radius: 4px !important;
+      font: inherit;
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    .hero-reel-dot:focus-visible,
+    .hero-reel-toggle:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
+  </style>
 </head>
+
 <body class="no-scroll">
+
   <aside class="sidebar" aria-label="Conference navigation">
     <a class="sidebar-brand" href="./index.html">
-      <span>International Conference on Intelligent Multimedia, Networking, and Security</span> <strong>(IMNS 2027)</strong>
+      <span>International Conference on Intelligent Multimedia, Networking, and Security</span>
+      <strong>(IMNS 2027)</strong>
     </a>
+
     <div class="sponsor-group">
       <div class="sponsor-row">
-        <a class="logo-tile" href="https://www.ieee.org/index.html" target="_blank" rel="noopener"><img src="../gallery_gen/0ef15cb374fb53a0cfff7775b7b7c185_320x104_fit.png" alt="IEEE"></a>
-        <a class="logo-tile" href="http://www.comsoc.org/" target="_blank" rel="noopener"><img src="../gallery_gen/291072cf3804a51717d0122e03c31a82_326x118_fit.png" alt="IEEE Communications Society"></a>
+        <a class="logo-tile" href="https://www.ieee.org/index.html" target="_blank" rel="noopener">
+          <img src="../gallery_gen/0ef15cb374fb53a0cfff7775b7b7c185_320x104_fit.png" alt="IEEE">
+        </a>
+        <a class="logo-tile" href="http://www.comsoc.org/" target="_blank" rel="noopener">
+          <img src="../gallery_gen/291072cf3804a51717d0122e03c31a82_326x118_fit.png" alt="IEEE Communications Society">
+        </a>
       </div>
-      <a class="logo-tile wide" href="https://www.stevens.edu/" target="_blank" rel="noopener"><img src="../gallery/stevens.svg" alt="Stevens Institute of Technology"></a>
+
+      <a class="logo-tile wide" href="https://www.stevens.edu/" target="_blank" rel="noopener">
+        <img src="../gallery/stevens.svg" alt="Stevens Institute of Technology">
+      </a>
+
       <p class="sponsor-caption">Co-Sponsors</p>
     </div>
+
     <nav class="site-nav">
       <ul>
         <li><a href="./index.html" aria-current="page">Home</a></li>
@@ -49,8 +133,17 @@
 
   <header class="mobile-header">
     <a class="mobile-brand" href="./index.html">IMNS 2027</a>
+
     <details class="mobile-menu">
-      <summary><span class="hamburger" aria-hidden="true"><span></span><span></span><span></span></span><span class="sr-only">Menu</span></summary>
+      <summary>
+        <span class="hamburger" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <span class="sr-only">Menu</span>
+      </summary>
+
       <nav class="site-nav" aria-label="Mobile navigation">
         <ul>
           <li><a href="./index.html" aria-current="page">Home</a></li>
@@ -71,33 +164,87 @@
 
   <div class="page-shell">
     <main class="site-main">
+
       <section class="masthead">
         <h1>2027 International Conference on Intelligent Multimedia, Networking, and Security</h1>
         <p class="masthead-meta">August 5-6, 2027 &nbsp;&bull;&nbsp; New York Area, USA</p>
         <p class="masthead-sponsor">IMNS 2027 is Co-Sponsored by the IEEE and IEEE Communications Society</p>
       </section>
-      <img class="hero-image" src="../gallery/nyc-skyline.jpg?v=20270905" alt="New York City skyline at twilight">
+
+      <div class="hero-reel" aria-label="Conference image reel">
+        <img
+          id="hero-reel-image"
+          class="hero-image"
+          src="./2027_reel/INFOCOM23-Homepage-Banners_v2_30JUN22_JB-01.png"
+          alt="IMNS conference banner 1"
+        >
+
+        <div class="hero-reel-controls">
+          <div class="hero-reel-dots" aria-label="Select reel image">
+            <button class="hero-reel-dot" type="button" aria-label="Show image 1" aria-current="true" data-slide="0"></button>
+            <button class="hero-reel-dot" type="button" aria-label="Show image 2" aria-current="false" data-slide="1"></button>
+            <button class="hero-reel-dot" type="button" aria-label="Show image 3" aria-current="false" data-slide="2"></button>
+            <button class="hero-reel-dot" type="button" aria-label="Show image 4" aria-current="false" data-slide="3"></button>
+            <button class="hero-reel-dot" type="button" aria-label="Show image 5" aria-current="false" data-slide="4"></button>
+            <button class="hero-reel-dot" type="button" aria-label="Show Stevens image" aria-current="false" data-slide="5"></button>
+          </div>
+
+          <button
+            id="hero-reel-toggle"
+            class="hero-reel-toggle"
+            type="button"
+            aria-label="Pause image reel"
+            aria-pressed="false"
+          >
+            &#10074;&#10074;
+          </button>
+        </div>
+      </div>
+
       <div class="main-body-wrap">
         <section class="content">
-        <h2>International Conference on Intelligent Multimedia, Networking, and Security</h2>
-        <p class="lead">The International Conference on Intelligent Multimedia, Networking, and Security is a premier global forum that brings together researchers, academics, and industry experts to exchange knowledge and advancements in multimedia technologies, communication networks, and cybersecurity. This conference highlights cutting-edge research and innovative solutions addressing the challenges in intelligent multimedia processing, secure networking protocols, and data protection techniques. The event fosters interdisciplinary collaboration, offering keynote speeches, technical sessions, workshops, and panel discussions to promote the latest trends and practical implementations in the field. The IMNS 2027 conference will take place in the New York Area between August 5-6, 2027, focusing on advancements in multimedia technologies amid competitive academia and industry.</p>
+          <h2>International Conference on Intelligent Multimedia, Networking, and Security</h2>
 
-        <h3>Important Dates</h3>
-        <div class="table-wrap important-dates">
-          <table>
-            <thead>
-              <tr><th>Events</th><th>Dates</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Paper Submission Deadline</td><td>TBD</td></tr>
-              <tr><td>Acceptance Notification</td><td>TBD</td></tr>
-              <tr><td>Camera-Ready Submission</td><td>TBD</td></tr>
-              <tr><td>Conference Registration Deadline</td><td>TBD</td></tr>
-              <tr><td>Conference Event</td><td>August 5-6, 2027</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
+          <p class="lead">
+            The International Conference on Intelligent Multimedia, Networking, and Security is a premier global forum that brings together researchers, academics, and industry experts to exchange knowledge and advancements in multimedia technologies, communication networks, and cybersecurity. This conference highlights cutting-edge research and innovative solutions addressing the challenges in intelligent multimedia processing, secure networking protocols, and data protection techniques. The event fosters interdisciplinary collaboration, offering keynote speeches, technical sessions, workshops, and panel discussions to promote the latest trends and practical implementations in the field. The IMNS 2027 conference will take place in the New York Area between August 5-6, 2027, focusing on advancements in multimedia technologies amid competitive academia and industry.
+          </p>
+
+          <h3>Important Dates</h3>
+
+          <div class="table-wrap important-dates">
+            <table>
+              <thead>
+                <tr>
+                  <th>Events</th>
+                  <th>Dates</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Paper Submission Deadline</td>
+                  <td>TBD</td>
+                </tr>
+                <tr>
+                  <td>Acceptance Notification</td>
+                  <td>TBD</td>
+                </tr>
+                <tr>
+                  <td>Camera-Ready Submission</td>
+                  <td>TBD</td>
+                </tr>
+                <tr>
+                  <td>Conference Registration Deadline</td>
+                  <td>TBD</td>
+                </tr>
+                <tr>
+                  <td>Conference Event</td>
+                  <td>August 5-6, 2027</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
 
         <!-- Announcements included from announcement.html -->
         <div id="announcement-placeholder" data-include="./announcement.html"></div>
@@ -107,19 +254,112 @@
     <footer class="site-footer">
       <div class="footer-inner">
         <div>
-          <p>&copy; 2027 <a href="http://conf-imns.org" target="_blank" rel="noopener">conf-imns.org</a></p>
+          <p>
+            &copy; 2027
+            <a href="http://conf-imns.org" target="_blank" rel="noopener">conf-imns.org</a>
+          </p>
         </div>
+
         <div class="footer-sponsor-block">
           <strong class="footer-sponsor-label">- Co-Sponsors -</strong>
+
           <div class="footer-sponsors">
-            <a class="logo-tile" href="https://www.ieee.org/index.html" target="_blank" rel="noopener"><img src="../gallery_gen/0ef15cb374fb53a0cfff7775b7b7c185_268x88_fit.png" alt="IEEE"></a>
-            <a class="logo-tile" href="http://www.comsoc.org/" target="_blank" rel="noopener"><img src="../gallery_gen/291072cf3804a51717d0122e03c31a82_264x96_fit.png" alt="IEEE Communications Society"></a>
-            <a class="logo-tile" href="https://www.stevens.edu/" target="_blank" rel="noopener"><img src="../gallery/stevens.svg" alt="Stevens Institute of Technology"></a>
+            <a class="logo-tile" href="https://www.ieee.org/index.html" target="_blank" rel="noopener">
+              <img src="../gallery_gen/0ef15cb374fb53a0cfff7775b7b7c185_268x88_fit.png" alt="IEEE">
+            </a>
+
+            <a class="logo-tile" href="http://www.comsoc.org/" target="_blank" rel="noopener">
+              <img src="../gallery_gen/291072cf3804a51717d0122e03c31a82_264x96_fit.png" alt="IEEE Communications Society">
+            </a>
+
+            <a class="logo-tile" href="https://www.stevens.edu/" target="_blank" rel="noopener">
+              <img src="../gallery/stevens.svg" alt="Stevens Institute of Technology">
+            </a>
           </div>
         </div>
       </div>
     </footer>
   </div>
+
+  <script>
+    (function () {
+      const slides = [
+        {
+          src: "./2027_reel/INFOCOM23-Homepage-Banners_v2_30JUN22_JB-01.png",
+          alt: "IMNS conference banner 1"
+        },
+        {
+          src: "./2027_reel/INFOCOM23-Homepage-Banners_v2_30JUN22_JB-02.png",
+          alt: "IMNS conference banner 2"
+        },
+        {
+          src: "./2027_reel/INFOCOM23-Homepage-Banners_v2_30JUN22_JB-03.png",
+          alt: "IMNS conference banner 3"
+        },
+        {
+          src: "./2027_reel/INFOCOM23-Homepage-Banners_v2_30JUN22_JB-04.png",
+          alt: "IMNS conference banner 4"
+        },
+        {
+          src: "./2027_reel/INFOCOM23-Homepage-Banners_v2_30JUN22_JB-05.png",
+          alt: "IMNS conference banner 5"
+        },
+        {
+          src: "./2027_reel/Stevens-Conference-2022-update.jpeg",
+          alt: "Stevens Institute of Technology conference image"
+        }
+      ];
+
+      const image = document.getElementById("hero-reel-image");
+      const dots = Array.from(document.querySelectorAll(".hero-reel-dot"));
+      const toggle = document.getElementById("hero-reel-toggle");
+
+      let current = 0;
+      let paused = false;
+      let timer = null;
+
+      function showSlide(index) {
+        current = index;
+        image.src = slides[current].src;
+        image.alt = slides[current].alt;
+
+        dots.forEach(function (dot, dotIndex) {
+          dot.setAttribute("aria-current", dotIndex === current ? "true" : "false");
+        });
+      }
+
+      function nextSlide() {
+        showSlide((current + 1) % slides.length);
+      }
+
+      function startTimer() {
+        clearInterval(timer);
+
+        if (!paused) {
+          timer = setInterval(nextSlide, 5000);
+        }
+      }
+
+      dots.forEach(function (dot) {
+        dot.addEventListener("click", function () {
+          showSlide(Number(dot.dataset.slide));
+          startTimer();
+        });
+      });
+
+      toggle.addEventListener("click", function () {
+        paused = !paused;
+
+        toggle.setAttribute("aria-pressed", paused ? "true" : "false");
+        toggle.setAttribute("aria-label", paused ? "Play image reel" : "Pause image reel");
+        toggle.innerHTML = paused ? "&#9654;" : "&#10074;&#10074;";
+
+        startTimer();
+      });
+
+      startTimer();
+    })();
+  </script>
+
 </body>
 </html>
-
