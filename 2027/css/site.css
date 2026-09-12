@@ -669,19 +669,37 @@ tbody tr:hover {
 
 .sponsorship-level {
   position: relative;
-  margin-bottom: 24px;
-  padding: 22px 24px;
+  margin-bottom: 8px;
+  padding: 10px 14px;
   border: 1px solid var(--line);
   background: #ffffff;
   overflow: hidden;
 }
 
 .sponsorship-level:last-of-type {
-  margin-bottom: 30px;
+  margin-bottom: 14px;
 }
 
 .sponsorship-level h3 {
+  margin: 0 0 2px;
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.sponsorship-level p {
+  margin-bottom: 3px;
+  line-height: 1.4;
+}
+
+.sponsorship-level ul {
   margin-top: 0;
+  margin-bottom: 2px;
+  padding-left: 20px;
+}
+
+.sponsorship-level li {
+  margin-bottom: 0;
+  line-height: 1.35;
 }
 
 .venue-content h3 {
