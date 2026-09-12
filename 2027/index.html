@@ -30,6 +30,42 @@
       border-bottom: 0;
     }
 
+    /* Left / Right navigation arrows */
+    .hero-reel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 64px;
+      border: none !important;
+      background: rgba(0, 40, 85, 0.45);
+      color: #fff;
+      font-size: 28px;
+      line-height: 1;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      padding: 0;
+      border-radius: 0 !important;
+    }
+
+    .hero-reel-arrow:hover,
+    .hero-reel-arrow:focus {
+      background: rgba(0, 40, 85, 0.72);
+    }
+
+    .hero-reel-arrow:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
+
+    .hero-reel-arrow--prev { left: 0; }
+    .hero-reel-arrow--next { right: 0; }
+
+    /* Bottom controls bar */
     .hero-reel-controls {
       position: absolute;
       left: 0;
@@ -38,7 +74,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
       pointer-events: none;
     }
 
@@ -72,6 +107,9 @@
     }
 
     .hero-reel-toggle {
+      position: absolute;
+      right: 12px;
+      bottom: 0;
       min-width: 34px;
       height: 28px;
       padding: 2px 8px;
@@ -178,6 +216,9 @@
           src="./2027_reel/upscaled/ultra_2x/INFOCOM23-Homepage-Banners_v2_30JUN22_JB-01.png"
           alt="IMNS conference banner 1"
         >
+
+        <button class="hero-reel-arrow hero-reel-arrow--prev" type="button" aria-label="Previous image">&#10094;</button>
+        <button class="hero-reel-arrow hero-reel-arrow--next" type="button" aria-label="Next image">&#10095;</button>
 
         <div class="hero-reel-controls">
           <div class="hero-reel-dots" aria-label="Select reel image">
@@ -332,6 +373,10 @@
         showSlide((current + 1) % slides.length);
       }
 
+      function prevSlide() {
+        showSlide((current - 1 + slides.length) % slides.length);
+      }
+
       function startTimer() {
         clearInterval(timer);
 
@@ -339,6 +384,20 @@
           timer = setInterval(nextSlide, 5000);
         }
       }
+
+      // Arrow navigation
+      var prevBtn = document.querySelector(".hero-reel-arrow--prev");
+      var nextBtn = document.querySelector(".hero-reel-arrow--next");
+
+      prevBtn.addEventListener("click", function () {
+        prevSlide();
+        startTimer();
+      });
+
+      nextBtn.addEventListener("click", function () {
+        nextSlide();
+        startTimer();
+      });
 
       dots.forEach(function (dot) {
         dot.addEventListener("click", function () {
