@@ -193,6 +193,12 @@ object {
   mix-blend-mode: screen;
 }
 
+.logo-tile img[src*="stevens_logo.svg"] {
+  mix-blend-mode: normal !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
 .logo-tile.wide {
   margin-top: 10px;
 }
