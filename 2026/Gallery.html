@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Gallery - IMNS 2026</title>
+  <link rel="stylesheet" href="./css/site.css?v=20260804">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" sizes="64x64" href="../gallery/favicon-pixel-64x64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../gallery/apple-touch-icon.png">
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .gallery-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .gallery-img:hover {
+      transform: scale(1.03);
+    }
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 480px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    /* Modal CSS */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9;
+      padding-top: 50px;
+      left: 300px; /* same as var(--sidebar-width) */
+      top: 0;
+      width: calc(100% - 300px);
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.85);
+    }
+    @media (max-width: 980px) {
+      .modal {
+        left: 0;
+        width: 100%;
+        padding-top: 80px;
+      }
+    }
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 10000;
+    }
+    @media (max-width: 980px) {
+      .close {
+        top: 70px;
+        right: 15px;
+      }
+    }
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="no-scroll">
+  <aside class="sidebar" aria-label="Conference navigation">
+    <a class="sidebar-brand" href="./index.html?v=20260804">
+      <span>International Conference on Intelligent Multimedia, Networking, and Security</span>
+      <strong>(IMNS 2026)</strong>
+    </a>
+    <div class="sponsor-group">
+      <div class="sponsor-row">
+        <a class="logo-tile" href="https://www.ieee.org/index.html" target="_blank" rel="noopener"><img src="../gallery_gen/0ef15cb374fb53a0cfff7775b7b7c185_320x104_fit.png" alt="IEEE"></a>
+        <a class="logo-tile" href="http://www.comsoc.org/"><img src="../gallery_gen/291072cf3804a51717d0122e03c31a82_326x118_fit.png" alt="IEEE Communications Society"></a>
+      </div>
+      <a class="logo-tile wide" href="https://www.kennesaw.edu/" target="_blank" rel="noopener"><img src="../gallery/ksu_horizontal.png" alt="Kennesaw State University"></a>
+      <p class="sponsor-caption">Technical Co-Sponsor</p>
+    </div>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="./index.html?v=20260804">Home</a></li>
+        <li><a href="./Organizing-Committee.html?v=20260804">Organizing Committee</a></li>
+        <li><a href="./Call-for-Paper.html?v=20260804">Call for Paper</a></li>
+        <li><a href="./Submissions.html?v=20260804">Submissions</a></li>
+        <li><a href="./Posters-and-Demo.html?v=20260804">Posters and Demo</a></li>
+        <li><a href="./Program.html?v=20260804">Program</a></li>
+        <li><a href="./Registration.html?v=20260804">Registration</a></li>
+        <li><a href="./Keynote.html?v=20260804">Keynote</a></li>
+        <li><a href="./Venue.html?v=20260804">Venue</a></li>
+        <li><a href="./Sponsorship.html?v=20260804">Sponsorship</a></li>
+        <li><a href="./Gallery.html?v=20260804" aria-current="page">Gallery</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <header class="mobile-header">
+    <a class="mobile-brand" href="./index.html?v=20260804">IMNS 2026</a>
+    <details class="mobile-menu">
+      <summary><span class="hamburger" aria-hidden="true"><span></span><span></span><span></span></span><span class="sr-only">Menu</span></summary>
+      <nav class="site-nav" aria-label="Mobile navigation">
+        <ul>
+          <li><a href="./index.html?v=20260804">Home</a></li>
+          <li><a href="./Organizing-Committee.html?v=20260804">Organizing Committee</a></li>
+          <li><a href="./Call-for-Paper.html?v=20260804">Call for Paper</a></li>
+          <li><a href="./Submissions.html?v=20260804">Submissions</a></li>
+          <li><a href="./Posters-and-Demo.html?v=20260804">Posters and Demo</a></li>
+          <li><a href="./Program.html?v=20260804">Program</a></li>
+          <li><a href="./Registration.html?v=20260804">Registration</a></li>
+          <li><a href="./Keynote.html?v=20260804">Keynote</a></li>
+          <li><a href="./Venue.html?v=20260804">Venue</a></li>
+          <li><a href="./Sponsorship.html?v=20260804">Sponsorship</a></li>
+          <li><a href="./Gallery.html?v=20260804" aria-current="page">Gallery</a></li>
+        </ul>
+      </nav>
+    </details>
+  </header>
+
+  <div class="page-shell">
+    <main class="site-main">
+      <section class="masthead">
+        <h1>2026 International Conference on Intelligent Multimedia, Networking, and Security</h1>
+        <p>3-4 August, 2026</p>
+        <p>Atlanta, Georgia, USA</p>
+        <p>IMNS 2026 is Technically Co-Sponsored by the IEEE and IEEE Communication Society</p>
+      </section>
+      <section class="content">
+        <h2>Gallery</h2>
+        <p>Memories from IMNS 2026.</p>
+
+        <div class="gallery-grid">
+          <img class="gallery-img" src="./2026_gallery/1786132285946.jpg" alt="Gallery Image" onclick="openModal(this.src)">
+          <img class="gallery-img" src="./2026_gallery/1786132279076.jpg" alt="Gallery Image" onclick="openModal(this.src)">
+          <img class="gallery-img" src="./2026_gallery/1786132284978.jpg" alt="Gallery Image" onclick="openModal(this.src)">
+          <img class="gallery-img" src="./2026_gallery/1786132286097.jpg" alt="Gallery Image" onclick="openModal(this.src)">
+          <img class="gallery-img" src="./2026_gallery/1786132288686.jpg" alt="Gallery Image" onclick="openModal(this.src)">
+          <img class="gallery-img" src="./2026_gallery/1786132288881.jpg" alt="Gallery Image" onclick="openModal(this.src)">
+          <img class="gallery-img" src="./2026_gallery/1786132289596.jpg" alt="Gallery Image" onclick="openModal(this.src)">
+          <img class="gallery-img" src="./2026_gallery/1786132289853.jpg" alt="Gallery Image" onclick="openModal(this.src)">
+          <img class="gallery-img" src="./2026_gallery/1786132289941.jpg" alt="Gallery Image" onclick="openModal(this.src)">
+          <img class="gallery-img" src="./2026_gallery/1786132290085.jpg" alt="Gallery Image" onclick="openModal(this.src)">
+          <img class="gallery-img" src="./2026_gallery/1786132291189.jpg" alt="Gallery Image" onclick="openModal(this.src)">
+          <img class="gallery-img" src="./2026_gallery/1786132290959.jpg" alt="Gallery Image" onclick="openModal(this.src)">
+          <img class="gallery-img" src="./2026_gallery/1786132290558.jpg" alt="Gallery Image" onclick="openModal(this.src)">
+          <img class="gallery-img" src="./2026_gallery/1786132291672.jpg" alt="Gallery Image" onclick="openModal(this.src)">
+        </div>
+
+        <!-- The Modal -->
+        <div id="galleryModal" class="modal" onclick="closeModal()">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <img class="modal-content" id="modalImage">
+        </div>
+
+        <script>
+          function openModal(imgSrc) {
+            var modal = document.getElementById("galleryModal");
+            var modalImg = document.getElementById("modalImage");
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+          }
+          function closeModal() {
+            document.getElementById("galleryModal").style.display = "none";
+          }
+        </script>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <p>&copy; 2026 <a href="http://conf-imns.org">conf-imns.org</a></p>
+        </div>
+        <div class="footer-sponsor-block">
+          <strong class="footer-sponsor-label">- Technical Co-Sponsor -</strong>
+          <div class="footer-sponsors">
+            <a class="logo-tile" href="https://www.ieee.org/index.html" target="_blank" rel="noopener"><img src="../gallery_gen/0ef15cb374fb53a0cfff7775b7b7c185_268x88_fit.png" alt="IEEE"></a>
+            <a class="logo-tile" href="http://www.comsoc.org/"><img src="../gallery_gen/291072cf3804a51717d0122e03c31a82_264x96_fit.png" alt="IEEE Communications Society"></a>
+            <a class="logo-tile" href="https://www.kennesaw.edu/" target="_blank" rel="noopener"><img src="../gallery/ksu_horizontal.png" alt="Kennesaw State University"></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
